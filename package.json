@@ -1,53 +1,46 @@
 {
-  "name": "@appmax-api/sdk",
-  "private": false,
-  "version": "0.0.1",
-  "description": "Unofficial NodeJS SDK for consuming Appmax API",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "module": "lib/index.mjs",
-  "scripts": {
-    "release": "npm run build && changeset publish",
-    "build": "run-s build:*",
-    "build:ts": "tsup ./src",
-    "build:lint": "biome check .",
-    "lint": "biome check --apply .",
-    "test": "tsnd ./test/index.ts",
-    "prepare": "husky"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.6.4",
-    "@changesets/cli": "^2.27.1",
-    "@types/node": "^20.12.3",
-    "husky": "^9.0.11",
-    "npm-run-all": "^4.1.5",
-    "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.3"
-  },
-  "keywords": [
-    "appmax",
-    "api",
-    "sdk",
-    "nodejs",
-    "typescript",
-    "checkout"
-  ],
-  "author": {
-    "name": "joaotonaco",
-    "url": "https://github.com/joaotonaco"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joaotonaco/appmax-api-sdk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/joaotonaco/appmax-api-sdk/issues"
-  },
-  "homepage": "https://github.com/joaotonaco/appmax-api-sdk#readme",
-  "license": "MIT"
+	"name": "@appmax-api/sdk",
+	"private": false,
+	"version": "0.0.1",
+	"description": "Unofficial NodeJS SDK for consuming Appmax API",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"module": "lib/index.mjs",
+	"scripts": {
+		"release": "npm run build && changeset publish",
+		"build": "run-s build:*",
+		"build:ts": "tsup ./src",
+		"build:lint": "biome check .",
+		"lint": "biome check --apply .",
+		"test": "tsnd ./test/index.ts",
+		"prepare": "husky"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.6.4",
+		"@changesets/cli": "^2.27.1",
+		"@types/node": "^20.12.3",
+		"husky": "^9.0.11",
+		"npm-run-all": "^4.1.5",
+		"ts-node": "^10.9.2",
+		"ts-node-dev": "^2.0.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.3"
+	},
+	"keywords": ["appmax", "api", "sdk", "nodejs", "typescript", "checkout"],
+	"author": {
+		"name": "joaotonaco",
+		"url": "https://github.com/joaotonaco"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joaotonaco/appmax-api-sdk.git"
+	},
+	"bugs": {
+		"url": "https://github.com/joaotonaco/appmax-api-sdk/issues"
+	},
+	"homepage": "https://github.com/joaotonaco/appmax-api-sdk#readme",
+	"license": "MIT"
 }
