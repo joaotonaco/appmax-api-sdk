@@ -12,7 +12,7 @@ export class AppmaxAPI {
 	public readonly api: APIManager;
 	public readonly customers = new CustomersManager(this);
 
-	constructor(private apiKey: string) {
+	constructor(apiKey: string) {
 		assertString(apiKey, "API_KEY");
 		this.api = new APIManager(apiKey);
 	}
