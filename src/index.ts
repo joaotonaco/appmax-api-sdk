@@ -1,3 +1,5 @@
+import { assertString } from "./assertions/literal";
+
 export class AppmaxAPI {
 	public static apiInfo = {
 		version: "v3",
@@ -5,5 +7,7 @@ export class AppmaxAPI {
 		testBaseUrl: "https://homolog.sandboxappmax.com.br/api",
 	};
 
-	constructor(private apiKey: string) {}
+	constructor(apiKey: string) {
+		assertString(apiKey);
+	}
 }
