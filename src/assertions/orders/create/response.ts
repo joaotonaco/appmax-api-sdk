@@ -1,7 +1,7 @@
 import { z } from "zod";
-import type { CreateOrderResponse } from "../../types/orders";
-import { createCustomerResponseSchema } from "../customers";
-import { handleAPIObjectAssertion } from "../handlers";
+import type { CreateOrderResponse } from "../../../types/orders/create";
+import { createCustomerResponseSchema } from "../../customers/create";
+import { handleAPIObjectAssertion } from "../../handlers";
 
 export const createOrderResponseSchema = z
 	.object({

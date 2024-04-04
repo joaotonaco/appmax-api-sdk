@@ -2,8 +2,8 @@ import type { AppmaxAPI } from "..";
 import {
 	assertTokenizeResponse,
 	tokenizePayloadSchema,
-} from "../assertions/tokenize";
-import type { TokenizeType } from "../types/tokenize";
+} from "../assertions/payments/tokenize";
+import type { TokenizeType } from "../types/payments/tokenize";
 
 export class PaymentsManager {
 	constructor(private readonly client: AppmaxAPI) {}

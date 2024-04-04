@@ -3,7 +3,7 @@ import type {
 	createOrderPayloadSchema,
 	createOrderResponseSchema,
 	createOrderSchema,
-} from "../assertions/orders";
+} from "../../assertions/orders/create";
 
 export type CreateOrderType = z.infer<typeof createOrderSchema>;
 export type CreateOrderPayload = z.infer<typeof createOrderPayloadSchema>;

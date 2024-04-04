@@ -2,8 +2,8 @@ import type { AppmaxAPI } from "..";
 import {
 	assertCustomerResponse,
 	createCustomerPayloadSchema,
-} from "../assertions/customers";
-import type { CreateCustomerType } from "../types/customers";
+} from "../assertions/customers/create";
+import type { CreateCustomerType } from "../types/customers/create";
 
 export class CustomersManager {
 	constructor(private readonly client: AppmaxAPI) {}

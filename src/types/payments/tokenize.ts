@@ -3,7 +3,7 @@ import type {
 	tokenizePayloadSchema,
 	tokenizeResponseSchema,
 	tokenizeSchema,
-} from "../assertions/tokenize";
+} from "../../assertions/payments/tokenize";
 
 export type TokenizeType = z.infer<typeof tokenizeSchema>;
 export type TokenizePayload = z.infer<typeof tokenizePayloadSchema>;

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { TokenizeResponse } from "../../types/tokenize";
-import { handleAPIObjectAssertion } from "../handlers";
+import type { TokenizeResponse } from "../../../types/payments/tokenize";
+import { handleAPIObjectAssertion } from "../../handlers";
 
 export const tokenizeResponseSchema = z.object({
 	token: z.string(),
