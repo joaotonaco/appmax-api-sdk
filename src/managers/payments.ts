@@ -10,13 +10,10 @@ export class PaymentsManager {
 
 	async tokenizeCard(card: TokenizeType) {
 		const payload = tokenizePayloadSchema.parse(card);
-		const response = await this.client.api.fetch<TokenizeType>(
-			"tokenize/card",
-			{
-				method: "POST",
-				body: payload,
-			},
-		);
+		const response = await this.client.api.fetch("tokenize/card", {
+			method: "POST",
+			body: payload,
+		});
 
 		return assertTokenizeResponse(response.data).token;
 	}

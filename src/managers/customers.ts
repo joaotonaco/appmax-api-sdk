@@ -10,13 +10,10 @@ export class CustomersManager {
 
 	async create(customer: CreateCustomerType) {
 		const payload = createCustomerPayloadSchema.parse(customer);
-		const response = await this.client.api.fetch<CreateCustomerType>(
-			"customer",
-			{
-				method: "POST",
-				body: payload,
-			},
-		);
+		const response = await this.client.api.fetch("customer", {
+			method: "POST",
+			body: payload,
+		});
 
 		return assertCustomerResponse(response.data);
 	}
