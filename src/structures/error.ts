@@ -1,6 +1,6 @@
 export class AppmaxAPIError extends Error {
-	constructor(code: string, message: string) {
-		super(message);
+	constructor(code: string, message: string, options?: ErrorOptions) {
+		super(message, options);
 
 		this.name = AppmaxAPIError.name;
 		this.message = this.getMessage(code);
@@ -20,8 +20,8 @@ export class AppmaxAPIError extends Error {
 }
 
 export class AppmaxAPIValidationError extends AppmaxAPIError {
-	constructor(code: string, message: string) {
-		super(code, message);
+	constructor(...args: ConstructorParameters<typeof AppmaxAPIError>) {
+		super(...args);
 
 		this.name = AppmaxAPIValidationError.name;
 	}
