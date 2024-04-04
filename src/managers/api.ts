@@ -10,23 +10,22 @@ export class APIManager {
 		testMode?: boolean,
 	) {
 		const { version, baseUrl, testBaseUrl } = AppmaxAPI.apiInfo;
-		this.baseUrl = `${testMode ? testBaseUrl : baseUrl}/${version}`;
+		this.baseUrl = `${testMode ? testBaseUrl : baseUrl}/${version}/`;
 	}
 
 	async fetch<T, U = unknown>(
 		path: string,
 		init: APIRequestInit = {},
 	): Promise<APIPayload<T, U, true>> {
+		const url = new URL(path, this.baseUrl);
+
 		init.method = init.method?.toUpperCase() || "GET";
 		init.body =
 			init.method === "POST"
 				? { "access-token": this.apiKey, ...(init.body || {}) }
 				: init.body;
 
-		const response = await fetch(
-			`${this.baseUrl}/${path}`,
-			init as RequestInit,
-		).catch((error) => {
+		const response = await fetch(url, init as RequestInit).catch((error) => {
 			throw new AppmaxAPIError(error.code || "UNKNOWN_ERROR", error.message);
 		});
 
