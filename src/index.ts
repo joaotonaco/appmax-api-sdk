@@ -1,4 +1,5 @@
 import { assertString } from "./assertions/literal";
+import { APIManager } from "./managers/api";
 
 export class AppmaxAPI {
 	public static apiInfo = {
@@ -7,7 +8,10 @@ export class AppmaxAPI {
 		testBaseUrl: "https://homolog.sandboxappmax.com.br/api",
 	};
 
-	constructor(apiKey: string) {
-		assertString(apiKey);
+	public readonly api: APIManager;
+
+	constructor(private apiKey: string) {
+		assertString(apiKey, "API_KEY");
+		this.api = new APIManager(apiKey);
 	}
 }
