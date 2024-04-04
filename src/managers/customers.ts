@@ -1,6 +1,6 @@
 import type { AppmaxAPI } from "..";
 import {
-	assertCustomerResponse,
+	assertCreateCustomerResponse,
 	createCustomerPayloadSchema,
 } from "../assertions/customers/create";
 import type { CreateCustomerType } from "../types/customers/create";
@@ -15,6 +15,6 @@ export class CustomersManager {
 			body: payload,
 		});
 
-		return assertCustomerResponse(response.data);
+		return assertCreateCustomerResponse(response.data);
 	}
 }

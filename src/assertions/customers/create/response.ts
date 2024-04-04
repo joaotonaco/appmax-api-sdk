@@ -52,7 +52,9 @@ export const createCustomerResponseSchema = z
 		updatedAt: input.updated_at,
 	}));
 
-export function assertCustomerResponse(value: unknown): CreateCustomerResponse {
+export function assertCreateCustomerResponse(
+	value: unknown,
+): CreateCustomerResponse {
 	return handleAPIObjectAssertion({
 		schema: createCustomerResponseSchema,
 		code: "CUSTOMER",

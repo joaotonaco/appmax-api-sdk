@@ -1,6 +1,6 @@
 import type { AppmaxAPI } from "..";
 import {
-	assertOrderResponse,
+	assertCreateOrderResponse,
 	createOrderPayloadSchema,
 } from "../assertions/orders/create";
 import { refundOrderPayloadSchema } from "../assertions/orders/refund";
@@ -22,7 +22,7 @@ export class OrdersManager {
 			body: payload,
 		});
 
-		return assertOrderResponse(response.data);
+		return assertCreateOrderResponse(response.data);
 	}
 
 	async setTrackingCode(trackingCode: TrackingCodeType) {

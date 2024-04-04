@@ -39,7 +39,7 @@ export const createOrderResponseSchema = z
 		additionalHash: input.additional_hash,
 	}));
 
-export function assertOrderResponse(value: unknown): CreateOrderResponse {
+export function assertCreateOrderResponse(value: unknown): CreateOrderResponse {
 	return handleAPIObjectAssertion({
 		schema: createOrderResponseSchema,
 		code: "ORDER",
