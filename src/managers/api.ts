@@ -3,10 +3,15 @@ import { AppmaxAPIError } from "../structures/error";
 import type { APIPayload, APIRequestInit } from "../types/api";
 
 export class APIManager {
-	public readonly baseUrl =
-		`${AppmaxAPI.apiInfo.baseUrl}/${AppmaxAPI.apiInfo.version}`;
+	public readonly baseUrl: string;
 
-	constructor(private readonly apiKey: string) {}
+	constructor(
+		private readonly apiKey: string,
+		testMode?: boolean,
+	) {
+		const { version, baseUrl, testBaseUrl } = AppmaxAPI.apiInfo;
+		this.baseUrl = `${testMode ? testBaseUrl : baseUrl}/${version}`;
+	}
 
 	async fetch<T, U = unknown>(
 		path: string,

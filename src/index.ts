@@ -12,8 +12,8 @@ export class AppmaxAPI {
 	public readonly api: APIManager;
 	public readonly customers = new CustomersManager(this);
 
-	constructor(apiKey: string) {
+	constructor(apiKey: string, options?: { testMode?: boolean }) {
 		assertString(apiKey, "API_KEY");
-		this.api = new APIManager(apiKey);
+		this.api = new APIManager(apiKey, options?.testMode);
 	}
 }
