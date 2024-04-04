@@ -6,9 +6,7 @@ import type {
 } from "../assertions/customers";
 
 export type CreateCustomerType = z.infer<typeof createCustomerSchema>;
-
 export type CreateCustomerPayload = z.infer<typeof createCustomerPayloadSchema>;
-
 export type CreateCustomerResponse = z.infer<
 	typeof createCustomerResponseSchema
 >;
