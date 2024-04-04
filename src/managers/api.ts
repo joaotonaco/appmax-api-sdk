@@ -15,18 +15,13 @@ export class APIManager {
 
 	async fetch<T, U = unknown>(
 		path: string,
-		init: APIRequestInit = {},
+		requestInit: APIRequestInit = {},
 	): Promise<APIPayload<T, U, true>> {
 		const url = new URL(path, this.baseUrl);
+		const init = this.parseInit(requestInit);
 
-		init.method = init.method?.toUpperCase() || "GET";
-		init.body =
-			init.method === "POST"
-				? { "access-token": this.apiKey, ...(init.body || {}) }
-				: init.body;
-
-		const response = await fetch(url, init as RequestInit).catch((error) => {
-			throw new AppmaxAPIError(error.code || "UNKNOWN_ERROR", error.message);
+		const response = await fetch(url, init).catch((err) => {
+			throw new AppmaxAPIError(err.code || "UNKNOWN_ERROR", err.message);
 		});
 
 		const data: APIPayload<T, U> = await response.json();
@@ -36,5 +31,18 @@ export class APIManager {
 		}
 
 		return data;
+	}
+
+	private parseInit(init: APIRequestInit) {
+		init.method = init.method?.toUpperCase() || "GET";
+
+		if (init.method === "POST" && init.body) {
+			init.body = {
+				"access-token": this.apiKey,
+				...init.body,
+			};
+		}
+
+		return { ...init, body: JSON.stringify(init.body) } as RequestInit;
 	}
 }
