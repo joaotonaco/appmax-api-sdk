@@ -1,5 +1,6 @@
 import { assertString } from "./assertions/literal";
 import { APIManager } from "./managers/api";
+import { CustomersManager } from "./managers/customers";
 
 export class AppmaxAPI {
 	public static apiInfo = {
@@ -9,6 +10,7 @@ export class AppmaxAPI {
 	};
 
 	public readonly api: APIManager;
+	public readonly customers = new CustomersManager(this);
 
 	constructor(private apiKey: string) {
 		assertString(apiKey, "API_KEY");

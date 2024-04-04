@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { handleLiteralAssertion } from "./handler";
+import { handleLiteralAssertion } from "./handlers";
 
 const stringSchema = z.string();
 
