@@ -11,7 +11,7 @@ export class APIManager {
 	async fetch<T, U = unknown>(
 		path: string,
 		init: APIRequestInit = {},
-	): Promise<APIPayload<T, U>> {
+	): Promise<APIPayload<T, U, true>> {
 		init.method = init.method?.toUpperCase() || "GET";
 		init.body =
 			init.method === "POST"

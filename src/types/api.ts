@@ -1,6 +1,6 @@
 export type APIRequestInit = Omit<RequestInit, "body"> & { body?: object };
 
-export type APIPayload<T, U = unknown> = {
+export type APIPayload<T, U = unknown, S = false> = {
 	text: string;
 	status: number;
 } & (
@@ -8,10 +8,12 @@ export type APIPayload<T, U = unknown> = {
 			success: true;
 			data: T;
 	  }
-	| {
-			success: false;
-			data: U;
-	  }
+	| (S extends true
+			? never
+			: {
+					success: false;
+					data: U;
+				})
 );
 
 export type APIValidationError = Record<string, [string]>;
