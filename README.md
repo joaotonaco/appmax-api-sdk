@@ -23,6 +23,57 @@ yarn add @appmax-api/sdk
 pnpm add @appmax-api/sdk
 ```
 
+## Getting Started
+
+```ts
+import { AppmaxAPI } from "@appmax-api/sdk"
+// const { AppmaxAPI } = require("@appmax-api/sdk")
+
+const api = new AppmaxAPI("Access Token")
+```
+
+## Features
+
+- **Testing mode** (use homolog.sandboxappmax url)
+
+  ```ts
+    new AppmaxAPI("Access Token", { testMode: true })
+  ```
+
+- **Create customers** (/customer)
+
+  ```ts
+    api.customers.create()
+  ```
+
+- **Create orders** (/order)
+
+  ```ts
+    api.orders.create()
+  ```
+
+- **Initiate payments** (/payment/*)
+
+  ```ts
+    api.payments.create()
+  ```
+
+- **Tokenize cards** (/tokenize/card)
+
+  ```ts
+    api.payments.tokenize()
+  ```
+
+- **Refund orders** (/refund)
+
+  ```ts
+    api.orders.refund()
+  ```
+
+## API Documentation
+
+Check the [official API documentation](https://docs.appmax.com.br/api/) for more information about their service.
+
 ## Contributing
 
 Feel free to contribute with suggestions or bug reports at our [GitHub repository](https://github.com/joaotonaco/appmax-api-sdk).
