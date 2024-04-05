@@ -21,7 +21,10 @@ export const paymentSchema = z.discriminatedUnion("type", [
 	z.object({
 		type: z.literal("pix"),
 		documentNumber: z.string().length(11),
-		expirationDate: z.coerce.date().transform((date) => date.toISOString()),
+		expirationDate: z.coerce
+			.date()
+			.transform((date) => date.toISOString())
+			.optional(),
 	}),
 	z.object({
 		type: z.literal("credit-card"),
