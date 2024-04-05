@@ -1,5 +1,12 @@
 # @appmax-api/sdk
 
+## 0.1.1
+
+### Patch Changes
+
+- 59d6b1a: Pix payment `expirationDate` property is now optional
+- acb46e3: Export some useful typing definitions
+
 ## 0.1.0
 
 ### Minor Changes
