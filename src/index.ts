@@ -21,3 +21,5 @@ export class AppmaxAPI {
 		this.api = new APIManager(apiKey, options?.testMode);
 	}
 }
+
+export * from "./types";
