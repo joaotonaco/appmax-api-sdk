@@ -1,5 +1,4 @@
 import { z } from "zod";
-import type { CreateCustomerResponse } from "../../../types/customers/create";
 import { handleAPIObjectAssertion } from "../../handlers";
 
 export const createCustomerResponseSchema = z
@@ -52,9 +51,7 @@ export const createCustomerResponseSchema = z
 		updatedAt: input.updated_at,
 	}));
 
-export function assertCreateCustomerResponse(
-	value: unknown,
-): CreateCustomerResponse {
+export function assertCreateCustomerResponse(value: unknown) {
 	return handleAPIObjectAssertion({
 		schema: createCustomerResponseSchema,
 		code: "CUSTOMER",

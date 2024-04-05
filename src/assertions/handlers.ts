@@ -1,4 +1,4 @@
-import type { ZodIssue } from "zod";
+import type { ZodIssue, ZodSchema, z } from "zod";
 import { AppmaxAPIError, AppmaxAPIValidationError } from "../structures/error";
 import type {
 	APIObjectAssertionProps,
@@ -21,12 +21,12 @@ export function handleLiteralAssertion({
 	}
 }
 
-export function handleAPIObjectAssertion({
+export function handleAPIObjectAssertion<T extends ZodSchema>({
 	schema,
 	value,
 	code,
 	route,
-}: APIObjectAssertionProps) {
+}: APIObjectAssertionProps<T>): z.infer<T> {
 	const name = code.toLowerCase().replaceAll("_", " ");
 
 	try {

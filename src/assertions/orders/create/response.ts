@@ -1,5 +1,4 @@
 import { z } from "zod";
-import type { CreateOrderResponse } from "../../../types/orders/create";
 import { createCustomerResponseSchema } from "../../customers/create";
 import { handleAPIObjectAssertion } from "../../handlers";
 
@@ -39,7 +38,7 @@ export const createOrderResponseSchema = z
 		additionalHash: input.additional_hash,
 	}));
 
-export function assertCreateOrderResponse(value: unknown): CreateOrderResponse {
+export function assertCreateOrderResponse(value: unknown) {
 	return handleAPIObjectAssertion({
 		schema: createOrderResponseSchema,
 		code: "ORDER",

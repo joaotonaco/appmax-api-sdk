@@ -1,16 +1,17 @@
 import type { ZodSchema } from "zod";
 
-export type BaseAssertionProps = {
-	schema: ZodSchema;
+export type BaseAssertionProps<T extends ZodSchema> = {
+	schema: T;
 	value: unknown;
 	code?: string;
 };
 
-export type LiteralAssertionProps = BaseAssertionProps & {
+export type LiteralAssertionProps = BaseAssertionProps<ZodSchema> & {
 	expect: string;
 };
 
-export type APIObjectAssertionProps = BaseAssertionProps & {
-	code: string;
-	route: string;
-};
+export type APIObjectAssertionProps<T extends ZodSchema> =
+	BaseAssertionProps<T> & {
+		code: string;
+		route: string;
+	};
