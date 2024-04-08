@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.1.4
+
+### Patch Changes
+
+- 4e01b7d: Fix schemas error
+
 ## 0.1.3
 
 ### Patch Changes
