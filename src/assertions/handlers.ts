@@ -1,9 +1,9 @@
-import type { ZodIssue, ZodSchema, z } from "zod";
-import { AppmaxAPIError, AppmaxAPIValidationError } from "../structures/error";
+import { AppmaxAPIError, AppmaxAPIValidationError } from "@/structures/error";
 import type {
 	APIObjectAssertionProps,
 	LiteralAssertionProps,
-} from "../types/assertions";
+} from "@/types/assertions";
+import type { ZodIssue, ZodSchema, z } from "zod";
 
 export function handleLiteralAssertion({
 	schema,

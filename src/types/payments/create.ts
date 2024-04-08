@@ -1,10 +1,10 @@
-import type { z } from "zod";
 import type {
 	createPaymentPayloadSchema,
 	createPaymentResponseSchema,
 	createPaymentSchema,
 	paymentSchema,
-} from "../../assertions/payments/create";
+} from "@/schemas/payments/create";
+import type { z } from "zod";
 
 export type PaymentType = z.infer<typeof paymentSchema>;
 

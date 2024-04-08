@@ -9,7 +9,7 @@
 	"scripts": {
 		"release": "npm run build && changeset publish",
 		"build:lint": "biome check .",
-		"build:ts": "tsup ./src",
+		"build:ts": "tsup ./src && tsc-alias",
 		"build": "run-s build:*",
 		"lint": "biome check --apply .",
 		"test": "tsnd ./test/index.ts",
@@ -29,6 +29,7 @@
 		"npm-run-all": "^4.1.5",
 		"ts-node": "^10.9.2",
 		"ts-node-dev": "^2.0.0",
+		"tsc-alias": "^1.8.8",
 		"tsup": "^8.0.2",
 		"typescript": "^5.4.3"
 	},

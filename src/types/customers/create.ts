@@ -1,9 +1,9 @@
-import type { z } from "zod";
 import type {
 	createCustomerPayloadSchema,
 	createCustomerResponseSchema,
 	createCustomerSchema,
-} from "../../assertions/customers/create";
+} from "@/schemas/customers/create";
+import type { z } from "zod";
 
 export type CreateCustomerType = z.infer<typeof createCustomerSchema>;
 export type CreateCustomerPayload = z.infer<typeof createCustomerPayloadSchema>;

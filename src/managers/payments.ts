@@ -1,14 +1,8 @@
-import type { AppmaxAPI } from "..";
-import {
-	assertCreatePaymentResponse,
-	createPaymentPayloadSchema,
-} from "../assertions/payments/create";
-import {
-	assertTokenizeResponse,
-	tokenizePayloadSchema,
-} from "../assertions/payments/tokenize";
-import type { CreatePaymentType } from "../types/payments/create";
-import type { TokenizeType } from "../types/payments/tokenize";
+import { assertCreatePaymentResponse } from "@/assertions/payments/create";
+import { assertTokenizeResponse } from "@/assertions/payments/tokenize";
+import { createPaymentPayloadSchema } from "@/schemas/payments/create";
+import { tokenizePayloadSchema } from "@/schemas/payments/tokenize";
+import type { AppmaxAPI, CreatePaymentType, TokenizeType } from "..";
 
 export class PaymentsManager {
 	constructor(private readonly client: AppmaxAPI) {}

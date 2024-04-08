@@ -1,6 +1,6 @@
+import { AppmaxAPIError } from "@/structures/error";
+import type { APIPayload, APIRequestInit } from "@/types/api";
 import { AppmaxAPI } from "..";
-import { AppmaxAPIError } from "../structures/error";
-import type { APIPayload, APIRequestInit } from "../types/api";
 
 export class APIManager {
 	public readonly baseUrl: string;

@@ -1,9 +1,9 @@
-import type { z } from "zod";
 import type {
 	tokenizePayloadSchema,
 	tokenizeResponseSchema,
 	tokenizeSchema,
-} from "../../assertions/payments/tokenize";
+} from "@/schemas/payments/tokenize";
+import type { z } from "zod";
 
 export type TokenizeType = z.infer<typeof tokenizeSchema>;
 export type TokenizePayload = z.infer<typeof tokenizePayloadSchema>;

@@ -1,16 +1,14 @@
-import type { AppmaxAPI } from "..";
-import {
-	assertCreateOrderResponse,
-	createOrderPayloadSchema,
-} from "../assertions/orders/create";
-import { refundOrderPayloadSchema } from "../assertions/orders/refund";
-import { trackingCodePayloadSchema } from "../assertions/orders/tracking-code";
+import { assertCreateOrderResponse } from "@/assertions/orders/create";
+import { createOrderPayloadSchema } from "@/schemas/orders/create";
+import { refundOrderPayloadSchema } from "@/schemas/orders/refund";
+import { trackingCodePayloadSchema } from "@/schemas/orders/tracking-code";
+import type { CreateOrderResponse } from "@/types/orders/create";
 import type {
-	CreateOrderResponse,
+	AppmaxAPI,
 	CreateOrderType,
-} from "../types/orders/create";
-import type { RefundOrderType } from "../types/orders/refund";
-import type { TrackingCodeType } from "../types/orders/tracking-code";
+	RefundOrderType,
+	TrackingCodeType,
+} from "..";
 
 export class OrdersManager {
 	constructor(private readonly client: AppmaxAPI) {}

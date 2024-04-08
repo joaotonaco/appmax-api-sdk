@@ -8,5 +8,10 @@ export const tokenizeSchema = z.object({
 	year: z.number().int(),
 });
 
-export * from "./payload";
-export * from "./response";
+export const tokenizePayloadSchema = tokenizeSchema.transform((input) => ({
+	card: input,
+}));
+
+export const tokenizeResponseSchema = z.object({
+	token: z.string(),
+});

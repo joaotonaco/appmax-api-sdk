@@ -1,9 +1,5 @@
-import { z } from "zod";
-import { handleAPIObjectAssertion } from "../../handlers";
-
-export const tokenizeResponseSchema = z.object({
-	token: z.string(),
-});
+import { tokenizeResponseSchema } from "@/schemas/payments/tokenize";
+import { handleAPIObjectAssertion } from "../handlers";
 
 export function assertTokenizeResponse(value: unknown) {
 	return handleAPIObjectAssertion({
