@@ -84,10 +84,10 @@ export const createCustomerResponseSchema = z
 		address_state: z.string().nullable(),
 		document_number: z.string().nullable(),
 		site_id: z.number(),
-		ip: z.string(),
-		custom_txt: z.string().optional(),
+		ip: z.string().optional(),
+		custom_txt: z.string().optional().nullable(),
 		created_at: z.coerce.date(),
-		updated_at: z.coerce.date(),
+		updated_at: z.coerce.date().optional().nullable(),
 		uf: z.string().nullable(),
 	})
 	.transform((input) => ({
