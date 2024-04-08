@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const paymentSchema = z.discriminatedUnion("type", [
+export const paymentSchema = z.union([
 	z.object({
 		type: z.literal("credit-card"),
 		card: z.object({
