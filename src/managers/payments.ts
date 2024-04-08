@@ -9,10 +9,13 @@ export class PaymentsManager {
 
 	async create(payment: CreatePaymentType) {
 		const payload = createPaymentPayloadSchema.parse(payment);
-		const response = await this.client.api.fetch("payments", {
-			method: "POST",
-			body: payload,
-		});
+		const response = await this.client.api.fetch(
+			`payment/${payment.payment.type}`,
+			{
+				method: "POST",
+				body: payload,
+			},
+		);
 
 		return assertCreatePaymentResponse(response.data);
 	}
