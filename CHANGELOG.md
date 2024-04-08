@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.1.2
+
+### Patch Changes
+
+- 5c6cf8b: Fix compiler configuration
+
 ## 0.1.1
 
 ### Patch Changes
