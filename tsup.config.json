@@ -1,9 +1,11 @@
 {
-	"target": "es2020",
+	"target": "node18",
 	"format": ["cjs", "esm"],
+	"entry": ["src/**/*.ts"],
 	"outDir": "lib",
-	"splitting": false,
+	"dts": true,
+	"bundle": false,
+	"treeshake": true,
 	"sourcemap": true,
-	"clean": true,
-	"dts": true
+	"clean": true
 }
