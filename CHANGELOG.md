@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.1.3
+
+### Patch Changes
+
+- 1b64c0e: Fix schemas importing error
+
 ## 0.1.2
 
 ### Patch Changes
