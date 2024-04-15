@@ -67,6 +67,7 @@ export const createOrderResponseSchema = z
 		full_payment_amount: z.string(),
 		additional_hash: z.string(),
 	})
+	.partial()
 	.transform((input) => ({
 		id: input.id,
 		customerId: input.customer_id,

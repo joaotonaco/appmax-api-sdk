@@ -12,6 +12,8 @@ export const tokenizePayloadSchema = tokenizeSchema.transform((input) => ({
 	card: input,
 }));
 
-export const tokenizeResponseSchema = z.object({
-	token: z.string(),
-});
+export const tokenizeResponseSchema = z
+	.object({
+		token: z.string(),
+	})
+	.partial();

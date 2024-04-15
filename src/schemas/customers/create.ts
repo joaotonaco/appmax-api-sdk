@@ -78,18 +78,19 @@ export const createCustomerResponseSchema = z
 		postcode: z.string().nullable(),
 		address_street: z.string().nullable(),
 		address_street_number: z.string().nullable(),
-		address_street_complement: z.string().optional().nullable(),
+		address_street_complement: z.string().nullable(),
 		address_street_district: z.string().nullable(),
 		address_city: z.string().nullable(),
 		address_state: z.string().nullable(),
 		document_number: z.string().nullable(),
 		site_id: z.number(),
-		ip: z.string().optional(),
-		custom_txt: z.string().optional().nullable(),
+		ip: z.string(),
+		custom_txt: z.string().nullable(),
 		created_at: z.coerce.date(),
-		updated_at: z.coerce.date().optional().nullable(),
+		updated_at: z.coerce.date().nullable(),
 		uf: z.string().nullable(),
 	})
+	.partial()
 	.transform((input) => ({
 		id: input.id,
 		hash: input.hash,

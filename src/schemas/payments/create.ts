@@ -106,29 +106,31 @@ export const createPaymentPayloadSchema = createPaymentSchema.transform(
 //         Response
 // ------------------------
 
-const createPaymentBaseResponseSchema = z.object({
-	pay_reference: z.string(),
-});
+const createPaymentBaseResponseSchema = z
+	.object({
+		pay_reference: z.string(),
+	})
+	.partial();
 
 export const createPaymentResponseSchema = z
 	.discriminatedUnion("type", [
 		createPaymentBaseResponseSchema.extend({
 			type: z.literal("CreditCard"),
-			upsell_hash: z.string(),
+			upsell_hash: z.string().optional(),
 		}),
 		createPaymentBaseResponseSchema.extend({
 			type: z.literal("Boleto"),
-			pdf: z.string().url(),
-			due_date: z.coerce.date(),
-			digitable_line: z.string(),
-			boleto_payment_code: z.string(),
+			pdf: z.string().url().optional(),
+			due_date: z.coerce.date().optional(),
+			digitable_line: z.string().optional(),
+			boleto_payment_code: z.string().optional(),
 		}),
 		createPaymentBaseResponseSchema.extend({
 			type: z.literal("Pix"),
-			pix_qrcode: z.string(),
-			pix_emv: z.string(),
-			pix_creation_date: z.coerce.date(),
-			pix_expiration_date: z.coerce.date(),
+			pix_qrcode: z.string().optional(),
+			pix_emv: z.string().optional(),
+			pix_creation_date: z.coerce.date().optional(),
+			pix_expiration_date: z.coerce.date().optional(),
 		}),
 	])
 	.transform((input) => {
