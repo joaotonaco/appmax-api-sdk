@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.1.5
+
+### Patch Changes
+
+- a35aa83: Fix response parsing
+
 ## 0.1.4
 
 ### Patch Changes
