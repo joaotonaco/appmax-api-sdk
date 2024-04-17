@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.2.1
+
+### Patch Changes
+
+- 1c94178: Fix `Invalid Access Token` error even with token was correct
+
 ## 0.2.0
 
 ### Minor Changes
