@@ -19,8 +19,9 @@ export class APIManager {
 	): Promise<APIPayload<T, U, true>> {
 		const url = new URL(path, this.baseUrl);
 		const init = this.parseInit(requestInit);
+		const request = new Request(url, init);
 
-		const response = await fetch(url, init).catch((err) => {
+		const response = await fetch(request).catch((err) => {
 			throw new AppmaxAPIError(err.code || "UNKNOWN_ERROR", err.message);
 		});
 
@@ -38,8 +39,12 @@ export class APIManager {
 
 		if (init.method === "POST" && init.body) {
 			init.body = {
-				"access-token": this.apiKey,
 				...init.body,
+				"access-token": this.apiKey,
+			};
+			init.headers = {
+				...init.headers,
+				"Content-Type": "application/json",
 			};
 		}
 
