@@ -1,5 +1,11 @@
 # @appmax-api/sdk
 
+## 0.2.0
+
+### Minor Changes
+
+- ab87972: New `PaymentsManager#installments` for `/payment/installments` route
+
 ## 0.1.5
 
 ### Patch Changes
